@@ -13,10 +13,21 @@ Install this Claude Code plugin and get four skills:
 
 ## Getting started
 
-1. Open Claude Code
-2. Install the plugin: `/plugin install career-toolkit`
-3. Run setup: `/career-toolkit:setup`
-4. Follow the prompts — Claude will walk you through everything
+1. [Download Claude Code](https://claude.ai/code) if you don't have it yet
+2. Open Claude Code (desktop app or terminal)
+3. Add the plugin marketplace — type this in the chat:
+   ```
+   /plugin marketplace add SahilAshar/career-toolkit
+   ```
+4. Install the plugin:
+   ```
+   /plugin install career-toolkit
+   ```
+5. Run setup:
+   ```
+   /career-toolkit:setup
+   ```
+6. Follow the prompts — Claude will walk you through everything
 
 ## How it works
 
