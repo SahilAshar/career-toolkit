@@ -1,0 +1,48 @@
+[
+  {
+    "id": "linkedin-fresh",
+    "prompt": "help with my linkedin",
+    "precondition": "Profile exists but no linkedin.md",
+    "description": "First LinkedIn session — should offer input methods",
+    "expected_behavior": [
+      "Offers copy-paste or PDF export paths",
+      "Does not crash on missing linkedin.md",
+      "Saves provided text to linkedin.md for future sessions"
+    ]
+  },
+  {
+    "id": "linkedin-field-adaptive",
+    "prompt": "optimize my linkedin",
+    "precondition": "Profile has field=marketing",
+    "description": "Output should match the user's field, not default to engineering",
+    "expected_behavior": [
+      "Draft suggestions use marketing language (GTM, campaigns, brand, pipeline)",
+      "No engineering jargon (architected, distributed systems, latency)",
+      "Examples reference marketing professionals, not engineers",
+      "Voice matches marketing conventions"
+    ]
+  },
+  {
+    "id": "linkedin-multiple-options",
+    "prompt": "review my linkedin",
+    "precondition": "Profile and linkedin.md exist",
+    "description": "Should provide multiple draft options per section",
+    "expected_behavior": [
+      "Generates 2+ options per section being revised",
+      "Does NOT present a single 'correct' version",
+      "Explains briefly why each option works",
+      "Writes drafts to drafts/linkedin-revisions.md"
+    ]
+  },
+  {
+    "id": "linkedin-no-profile",
+    "prompt": "linkedin review",
+    "precondition": "No ~/.claude/career-toolkit.local.md exists",
+    "description": "No profile — should redirect to setup",
+    "expected_behavior": [
+      "Redirects to /career-toolkit:setup",
+      "Does NOT attempt review without profile context",
+      "Message is friendly and explains why setup is needed"
+    ]
+  }
+]

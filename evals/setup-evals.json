@@ -1,0 +1,60 @@
+[
+  {
+    "id": "setup-fresh",
+    "prompt": "/career-toolkit:setup",
+    "description": "Fresh setup with no existing profile — should run full interview flow",
+    "expected_behavior": [
+      "Asks name, field, current role, target role, target level",
+      "Creates ~/Documents/career-toolkit/ with drafts/ and research/ subdirs",
+      "Creates profile.md in workspace",
+      "Creates ~/.claude/career-toolkit.local.md with YAML frontmatter",
+      "Offers resume ingestion (PDF or paste)",
+      "Offers to run resume-review or resume-research after completion"
+    ]
+  },
+  {
+    "id": "setup-with-resume-paste",
+    "prompt": "set up my profile. My name is Alex, I'm a nurse. Here's my resume: [paste resume text]",
+    "description": "Setup with inline resume paste — should parse resume without asking for PDF",
+    "expected_behavior": [
+      "Parses pasted resume text into resume.md",
+      "Does NOT ask user to drop a PDF since text was already provided",
+      "Creates profile with field=nursing",
+      "Offers immediate resume review"
+    ]
+  },
+  {
+    "id": "setup-existing-profile",
+    "prompt": "/career-toolkit:setup",
+    "precondition": "~/.claude/career-toolkit.local.md already exists",
+    "description": "Setup when profile already exists — should offer update vs fresh start",
+    "expected_behavior": [
+      "Detects existing profile",
+      "Shows summary of current profile data",
+      "Offers to update or start fresh",
+      "Does NOT overwrite without user confirmation"
+    ]
+  },
+  {
+    "id": "setup-no-target-role",
+    "prompt": "/career-toolkit:setup (user answers 'I'm not sure yet' to target role)",
+    "description": "User doesn't know their target role — should handle gracefully",
+    "expected_behavior": [
+      "Records 'exploring' in profile",
+      "Does NOT pressure user to pick a role",
+      "Completes setup successfully",
+      "Other skills handle 'exploring' gracefully"
+    ]
+  },
+  {
+    "id": "setup-non-tech-field",
+    "prompt": "/career-toolkit:setup (user says 'I'm a nurse' or 'I'm in marketing')",
+    "description": "Non-tech field — no SWE jargon should appear",
+    "expected_behavior": [
+      "No SWE jargon in interview questions",
+      "Level framing uses field-appropriate terms (not IC4/IC5/Staff)",
+      "Profile captures field correctly",
+      "No references to engineering, code, or tech-specific concepts"
+    ]
+  }
+]

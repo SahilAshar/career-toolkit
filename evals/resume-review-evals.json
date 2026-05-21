@@ -1,0 +1,49 @@
+[
+  {
+    "id": "review-three-lenses",
+    "prompt": "review my resume",
+    "precondition": "Profile and resume.md exist",
+    "description": "Should launch 3 parallel agents with distinct perspectives",
+    "expected_behavior": [
+      "Launches 3 parallel review agents (Recruiter, ATS, Level-Signal)",
+      "Each agent produces distinct, non-overlapping feedback",
+      "Synthesis combines all three into unified output",
+      "Output includes: verdict, top themes, prioritized actions, scorecard"
+    ]
+  },
+  {
+    "id": "review-field-adaptive",
+    "prompt": "review my resume",
+    "precondition": "Profile has field=nursing, resume contains nursing experience",
+    "description": "Review should adapt to healthcare field",
+    "expected_behavior": [
+      "Recruiter lens adapts to healthcare hiring norms",
+      "ATS keywords are nursing-specific (patient outcomes, certifications, protocols)",
+      "Level signals use nursing career ladder (RN, charge nurse, nurse manager)",
+      "No engineering or tech jargon in feedback"
+    ]
+  },
+  {
+    "id": "review-no-resume",
+    "prompt": "review my resume",
+    "precondition": "Profile exists but no resume.md",
+    "description": "No resume on file — should offer ingestion",
+    "expected_behavior": [
+      "Detects missing resume.md",
+      "Offers to ingest resume now (PDF or paste)",
+      "Does NOT crash or produce empty review"
+    ]
+  },
+  {
+    "id": "review-feedback-style",
+    "prompt": "review my resume",
+    "precondition": "Profile has feedback_style=encouraging",
+    "description": "Feedback tone should match user's preference",
+    "expected_behavior": [
+      "Tone is encouraging — leads with strengths before improvements",
+      "Still honest and specific about weaknesses",
+      "Does not sugarcoat to the point of being unhelpful",
+      "Noticeably different tone than feedback_style=direct"
+    ]
+  }
+]

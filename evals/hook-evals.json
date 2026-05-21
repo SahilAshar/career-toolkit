@@ -1,0 +1,21 @@
+[
+  {
+    "id": "hook-no-profile",
+    "scenario": "New session, no ~/.claude/career-toolkit.local.md exists",
+    "description": "SessionStart hook should nudge user to run setup",
+    "expected_behavior": [
+      "Hook outputs message mentioning /career-toolkit:setup",
+      "Message is friendly and brief",
+      "Does not block the session or force setup"
+    ]
+  },
+  {
+    "id": "hook-has-profile",
+    "scenario": "New session, ~/.claude/career-toolkit.local.md exists",
+    "description": "SessionStart hook should be silent",
+    "expected_behavior": [
+      "Hook produces no output",
+      "Session starts normally without any nudge"
+    ]
+  }
+]

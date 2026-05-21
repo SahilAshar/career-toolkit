@@ -1,0 +1,50 @@
+[
+  {
+    "id": "research-field-specific",
+    "prompt": "what should my resume look like",
+    "precondition": "Profile has field=product management",
+    "description": "Research should be specific to PM field, not generic",
+    "expected_behavior": [
+      "Searches PM-specific sources, not generic tech resume guides",
+      "Verb tiers adapted to PM language (Drove, Defined, Prioritized)",
+      "Metrics guidance references PM-relevant metrics (adoption, retention, revenue)",
+      "Anti-patterns are PM-specific (too technical, too vague on business impact)"
+    ]
+  },
+  {
+    "id": "research-saves-output",
+    "prompt": "resume research",
+    "precondition": "Profile exists with any field",
+    "description": "Should save structured findings to research/ directory",
+    "expected_behavior": [
+      "Saves to ~/Documents/career-toolkit/research/",
+      "Filename includes date and target role slug",
+      "File includes metadata header (date, role, sources, prior research note)",
+      "Content is structured with clear sections"
+    ]
+  },
+  {
+    "id": "research-no-bullets",
+    "prompt": "what do good resumes look like in my field",
+    "precondition": "Profile exists",
+    "description": "Should return patterns and principles, NOT write resume bullets",
+    "expected_behavior": [
+      "Returns verb tiers, structure patterns, keyword lists",
+      "Does NOT write actual resume bullets for the user",
+      "Provides examples from research (anonymized) for reference",
+      "User is expected to craft their own bullets from findings"
+    ]
+  },
+  {
+    "id": "research-override",
+    "prompt": "research resumes for senior data scientists at Netflix",
+    "precondition": "Profile has field=marketing (different from override)",
+    "description": "User override should take precedence over profile defaults",
+    "expected_behavior": [
+      "Uses 'senior data scientist' as target, NOT marketing from profile",
+      "Uses 'Netflix' as target company",
+      "Research is data-science-specific",
+      "Does not mix in marketing advice from profile"
+    ]
+  }
+]

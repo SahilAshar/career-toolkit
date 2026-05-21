@@ -1,0 +1,9 @@
+{
+  "name": "career-toolkit",
+  "version": "0.1.0",
+  "description": "AI-powered career optimization toolkit. Resume review, LinkedIn optimization, and job search research — works for any field, any level.",
+  "author": {
+    "name": "Sahil Ashar"
+  },
+  "keywords": ["career", "resume", "linkedin", "job-search", "interview-prep"]
+}
