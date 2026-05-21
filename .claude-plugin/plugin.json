@@ -5,5 +5,7 @@
   "author": {
     "name": "Sahil Ashar"
   },
+  "license": "MIT",
+  "repository": "https://github.com/SahilAshar/career-toolkit",
   "keywords": ["career", "resume", "linkedin", "job-search", "interview-prep"]
 }

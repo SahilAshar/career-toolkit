@@ -1,5 +1,6 @@
 ---
 name: resume-review
+version: 0.1.0
 description: >
   This skill should be used when the user asks to "review my resume", "check my resume",
   "how's my resume", "resume review", "resume feedback", "critique my resume", or wants

@@ -1,5 +1,6 @@
 ---
 name: setup
+version: 0.1.0
 description: >
   This skill should be used when the user asks to "set up my profile", "get started",
   "initialize career toolkit", "setup", or is using the career-toolkit plugin for the
